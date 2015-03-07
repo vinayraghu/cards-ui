@@ -10,7 +10,11 @@
       <div class="comment">
         <card-user name="{{ comment.user.name }}" profileLink="{{ comment.user.profileLink }}" avatar="{{ comment.user.avatar }}"></card-user>
         <card-comment-time time="{{comment.commentTime}}"></card-comment-time>
-        <card-comment-text>{{ comment.commentText }}</card-comment-text>
+        <template if="{{ comment.editable == true }}">
+          <a href="#" on-click="{{ removeComment }}" class="pull-right">Delete</a>
+          <a href="#" on-click="{{ editComment }}" class="pull-right">Edit</a>
+        </template>
+        <card-comment-text id="cardCommentText">{{ comment.commentText }}</card-comment-text>
       </div>
     </template>
     <link rel="stylesheet" href="card-comment.css">
@@ -18,7 +22,12 @@
   <script>
     (function () {
       Polymer({
-        // define element prototype here
+        removeComment: function() {
+          console.log("Remove comment");
+        },
+        editComment: function() {
+          console.log("Edit comment");
+        }
       });
     })();
   </script>

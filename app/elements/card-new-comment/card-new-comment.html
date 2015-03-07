@@ -40,6 +40,7 @@
                                     };
             newCommentObject.commentText = this.$.newCommentText.value;
             newCommentObject.commentTime = Date.now();
+            newCommentObject.editable = true;
             this.model.push(newCommentObject);
             this.$.newCommentText.value="";
           }
