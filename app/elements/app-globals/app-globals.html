@@ -8,6 +8,7 @@
 <link rel="import" href="../card-content/card-content.html">
 <link rel="import" href="../card-plus/card-plus.html">
 <link rel="import" href="../card-comment/card-comment.html">
+<link rel="import" href="../card-new-comment/card-new-comment.html">
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -24,7 +25,7 @@
         <card-comments>
           <card-plus plusCount="{{ card.plusCount }}" plusUsers="{{ card.plusUsers }}"></card-plus>
           <card-comment comments="{{ card.comments }}"></card-comment>
-          <card-new-comment></card-new-comment>
+          <card-new-comment model="{{ card.comments }}"></card-new-comment>
         </card-comments>
       </card-container>
     </template>

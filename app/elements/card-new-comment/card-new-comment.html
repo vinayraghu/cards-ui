@@ -1,0 +1,38 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-new-comment" attributes="model">
+  <template>
+    <link rel="stylesheet" href="card-new-comment.css">
+    <input type="text" id="newCommentText" on-click="{{ isEditing }}">
+    <template if="{{ editing == true }}">
+      <button id="commentButton" on-click="{{ postNewComment }}" class="post-button">Post Comment</button>
+      <button id="cancelComment" on-click="{{ isNotEditing }}" class="cancel-button">Cancel</button>
+    </template>
+
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        editing: false,
+        isEditing: function() {
+          this.editing = true;
+        },
+        isNotEditing: function() {
+          this.$.newCommentText.value = "";
+          this.editing = false;
+        },
+        postNewComment: function() {
+          var newCommentObject = {};
+          newCommentObject.user = {
+                                    name: "Wile E. Coyote",
+                                    profileLink: "#",
+                                    avatar: "http://i.imgur.com/nOgCs9Y.png"
+                                  };
+          newCommentObject.commentText = this.$.newCommentText.value;
+          newCommentObject.commentTime = Date.now();
+          this.model.push(newCommentObject);
+        }
+      });
+    })();
+  </script>
+</polymer-element>
