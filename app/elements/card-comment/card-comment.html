@@ -1,0 +1,25 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-comment" attributes="comments">
+  <template>
+    <div class="comment-count">
+      {{comments.length}} comments
+    </div>
+
+    <template repeat="{{ comment in comments }}">
+      <div class="comment">
+        <card-user name="{{ comment.user.name }}" profileLink="{{ comment.user.profileLink }}" avatar="{{ comment.user.avatar }}"></card-user>
+        <card-comment-time time="{{comment.commentTime}}"></card-comment-time>
+        <card-comment-text>{{ comment.commentText }}</card-comment-text>
+      </div>
+    </template>
+    <link rel="stylesheet" href="card-comment.css">
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>

@@ -7,6 +7,7 @@
 <link rel="import" href="../card-tags/card-tags.html">
 <link rel="import" href="../card-content/card-content.html">
 <link rel="import" href="../card-plus/card-plus.html">
+<link rel="import" href="../card-comment/card-comment.html">
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -21,12 +22,8 @@
         <card-tags tags="{{ card.tags }}" color="blue"></card-tags>
         <card-content media="{{ card.content.media }}" mediaLink="{{ card.content.mediaLink }}" excerpt=" {{ card.content.excerpt}} "></card-content>
         <card-comments>
-          <card-plus plusCount="{{ card.plusCount }}" plusUsers="{{ card.plusUsers }}">
-          <card-comment>
-            <!-- <card-user name="Bugs Bunny" profileLink="#" avatar=""></card-user> -->
-            <card-comment-text></card-comment-text>
-            <card-comment-time></card-comment-time>
-          </card-comment>
+          <card-plus plusCount="{{ card.plusCount }}" plusUsers="{{ card.plusUsers }}"></card-plus>
+          <card-comment comments="{{ card.comments }}"></card-comment>
           <card-new-comment></card-new-comment>
         </card-comments>
       </card-container>
