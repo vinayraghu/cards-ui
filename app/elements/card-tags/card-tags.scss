@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  position: relative;
+  right: -35px;
+  float: right;
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eee;
+  height: 28px; // Height of one tag
+  overflow: hidden;
+  &:hover {
+    height: auto;
+  }
+  > li {
+    border-right: 4px solid;
+    font-size: 14px;
+    padding: .4em 1em;
+    text-align: right;
+    &:hover {
+      background: #eee;
+    }
+    a {
+      color: #222;
+      text-decoration: none;
+    }
+    &.black{
+      @for $i from 1 through 5 {
+        &:nth-of-type(#{$i}) {
+          border-right-color: rgba(black, ((100/$i) / 100));
+        }
+      }
+    }
+    &.blue{
+      @for $i from 1 through 5 {
+        &:nth-of-type(#{$i}) {
+          border-right-color: rgba(#427fed, ((100/$i) / 100));
+        }
+      }
+    }
+  }
+}

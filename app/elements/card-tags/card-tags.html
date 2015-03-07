@@ -1,0 +1,23 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-tags" attributes="tags color">
+  <template>
+    <link rel="stylesheet" href="card-tags.css">
+    <ul class="tag-list">
+      <template repeat="{{ tag in tags }}">
+        <li class="{{ color }}">
+          <a href="/explore/{{tag}}">
+            #{{tag}}
+          </a>
+        </li>
+      </template>
+    </ul>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>
