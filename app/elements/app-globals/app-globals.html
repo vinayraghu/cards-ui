@@ -6,6 +6,7 @@
 <link rel="import" href="../card-user/card-user.html">
 <link rel="import" href="../card-tags/card-tags.html">
 <link rel="import" href="../card-content/card-content.html">
+<link rel="import" href="../card-plus/card-plus.html">
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -20,6 +21,7 @@
         <card-tags tags="{{ card.tags }}" color="blue"></card-tags>
         <card-content media="{{ card.content.media }}" mediaLink="{{ card.content.mediaLink }}" excerpt=" {{ card.content.excerpt}} "></card-content>
         <card-comments>
+          <card-plus plusCount="{{ card.plusCount }}" plusUsers="{{ card.plusUsers }}">
           <card-comment>
             <!-- <card-user name="Bugs Bunny" profileLink="#" avatar=""></card-user> -->
             <card-comment-text></card-comment-text>
@@ -67,6 +69,8 @@
           mediaLink: "https://plus.google.com/+DeboraSinulingga/posts/Jgcomz7o8rM",
           excerpt: "Don't call me a doll - Lola Bunny"
         },
+        plusCount: 4,
+        plusUsers: ["http://i.imgur.com/p2pmU28.png", "http://i.imgur.com/jmOIVnd.png", "http://i.imgur.com/Fwj9634.png", "http://i.imgur.com/FY45cgz.png"],
         comments: [{
                     user: {
                           name: "Bugs Bunny",

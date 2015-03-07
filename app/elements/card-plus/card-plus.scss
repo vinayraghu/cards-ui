@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  margin-top: 1em;
+}
+
+
+.plus-button {
+  border: 1px solid #222;
+  text-align: center;
+  border-radius: 2px;
+  padding: .5em 1em;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+  &.plus-one {
+    background: #dd4b39;
+    color: white;
+  }
+}
+
+.plus-user-section {
+  float: right;
+}
+
+.plus-users {
+  width: 32px;
+  background: #eee;
+  border-radius: 2px;
+}

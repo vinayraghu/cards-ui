@@ -1,0 +1,34 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-plus" attributes="plusCount plusUsers">
+  <template>
+    <link rel="stylesheet" href="card-plus.css">
+    <button id="plusButton" on-click="{{ incrementPlus }}" class="plus-button">+{{plusCount}}</button>
+    <div class="plus-user-section">
+      <template repeat="{{ url in plusUsers }}">
+        <img src="{{ url }}" alt="" class="plus-users">
+      </template>
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        incrementPlus: function () {
+          if(this.$.plusButton.classList.contains("plus-one")) {
+            this.plusCount--;
+            var position = this.plusUsers.indexOf("http://i.imgur.com/4FwR9iY.png");
+            if(~position ) {
+              this.plusUsers.splice(position, 1);
+            }
+
+          }
+          else {
+            this.plusCount++;
+            this.plusUsers.push("http://i.imgur.com/4FwR9iY.png");
+          }
+          this.$.plusButton.classList.toggle("plus-one");
+        }
+      });
+    })();
+  </script>
+</polymer-element>
