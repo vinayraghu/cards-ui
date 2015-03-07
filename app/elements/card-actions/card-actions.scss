@@ -1,0 +1,43 @@
+:host {
+  display: inline-block;
+  float: right;
+}
+
+.caret {
+  width: 25px;
+}
+
+.card-actions-list {
+  position: relative;
+  top: .5em;
+  list-style: none;
+  padding-left: 0;
+  display: none;
+  border: 1px solid #ddd;
+
+  &.is-visible {
+    display: block;
+  }
+  > li {
+    white-space: nowrap;
+
+    &:first-child {
+      margin-top: 1em;
+    }
+
+    a {
+      padding: .6em 2em;
+      display: block;
+      text-decoration: none;
+      color: #222;
+      &:hover {
+        background: #EEE;
+      }
+    }
+  }
+}
+
+
+.action-button {
+  float: right;
+}

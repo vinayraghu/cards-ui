@@ -1,0 +1,28 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-actions" attributes="cardActions">
+  <template>
+    <link rel="stylesheet" href="card-actions.css">
+    <a href="#" id="actionsButton" on-click="{{ toggleList }}" class="action-button">
+      <img class="caret" src="../../images/down.png" alt="">
+    </a>
+    <ul class="card-actions-list" id="cardActionsList">
+      <template repeat="{{ action in cardActions }}">
+        <li>
+          <a href=" {{ action.link }} ">
+            {{ action.title }}
+          </a>
+        </li>
+      </template>
+    </ul>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        toggleList: function () {
+          this.$.cardActionsList.classList.toggle("is-visible");
+        }
+      });
+    })();
+  </script>
+</polymer-element>
