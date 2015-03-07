@@ -1,0 +1,22 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-user" attributes="name profileLink avatar avatarType">
+  <template>
+
+    <link rel="stylesheet" href="card-user.css">
+    <a href="{{ profileLink }}">
+      <img src="{{ avatar }}" alt="" class="{{ {imgCircle: avatarType == 'circle'} | tokenList }}">
+      <span class="username">{{ name }}</span>
+    </a>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>
+
+
+<card-user name="{{ card.author.name }}" profileLink="{{ card.author.profileLink }}" avatar="{{ card.author.avatar }}" avatarType="circle"></card-user>
