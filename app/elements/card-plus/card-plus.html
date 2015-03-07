@@ -16,7 +16,7 @@
         incrementPlus: function () {
           if(this.$.plusButton.classList.contains("plus-one")) {
             this.plusCount--;
-            var position = this.plusUsers.indexOf("http://i.imgur.com/4FwR9iY.png");
+            var position = this.plusUsers.indexOf("http://i.imgur.com/nOgCs9Y.png");
             if(~position ) {
               this.plusUsers.splice(position, 1);
             }
@@ -24,7 +24,7 @@
           }
           else {
             this.plusCount++;
-            this.plusUsers.push("http://i.imgur.com/4FwR9iY.png");
+            this.plusUsers.push("http://i.imgur.com/nOgCs9Y.png");
           }
           this.$.plusButton.classList.toggle("plus-one");
         }

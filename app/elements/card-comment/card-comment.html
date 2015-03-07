@@ -22,10 +22,12 @@
   <script>
     (function () {
       Polymer({
-        removeComment: function() {
+        removeComment: function(e) {
+          e.preventDefault();
           console.log("Remove comment");
         },
-        editComment: function() {
+        editComment: function(e) {
+          e.preventDefault();
           console.log("Edit comment");
         }
       });

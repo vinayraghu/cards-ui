@@ -19,7 +19,8 @@
   <script>
     (function () {
       Polymer({
-        toggleList: function () {
+        toggleList: function (e) {
+          e.preventDefault();
           this.$.cardActionsList.classList.toggle("is-visible");
         }
       });

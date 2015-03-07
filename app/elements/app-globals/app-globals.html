@@ -20,7 +20,7 @@
         <card-context name="{{ card.context.name }}" image="{{ card.context.image }}"></card-context>
         <card-actions cardActions = "{{ cardActions }}"></card-actions>
         <card-user name="{{ card.author.name }}" profileLink="{{ card.author.profileLink }}" avatar="{{ card.author.avatar }}" avatarType="circle"></card-user>
-        <card-tags tags="{{ card.tags }}" color="blue"></card-tags>
+        <card-tags tags="{{ card.tags }}" color="{{ card.tagColor }}"></card-tags>
         <card-content media="{{ card.content.media }}" mediaLink="{{ card.content.mediaLink }}" excerpt=" {{ card.content.excerpt}} "></card-content>
         <card-comments>
           <card-plus plusCount="{{ card.plusCount }}" plusUsers="{{ card.plusUsers }}"></card-plus>
@@ -89,7 +89,48 @@
                     editable: "false"
                     }
                   ]
-      }];
+      },{
+        context: {
+          name: "Programming",
+          image: "http://i.imgur.com/8uo3vrm.png"
+        },
+        author: {
+          name: "Smashing Magazine",
+          profileLink: "#",
+          avatar: "http://i.imgur.com/XhMy75W.png",
+          avatarType: "circle"
+        },
+        tags: ["Webdesign", "Website"],
+        tagColor: "black",
+        content: {
+          media: "http://i.imgur.com/VIir6qI.jpg",
+          mediaLink: "http://ow.ly/K0SFw﻿",
+          excerpt: "How playing in a band taught Jeremy Girard to become a better web designer http://ow.ly/K0SFw﻿"
+        },
+        plusCount: 3,
+        plusUsers: ["http://i.imgur.com/jmOIVnd.png", "http://i.imgur.com/Fwj9634.png", "http://i.imgur.com/FY45cgz.png"],
+        comments: [{
+                    user: {
+                          name: "Yosemite Sam",
+                          profileLink: "#",
+                          avatar: "http://i.imgur.com/FY45cgz.png"
+                        },
+                    commentText: "Oooooo!  I hate that rabbit!",
+                    commentTime: "20150306",
+                    editable: "false"
+                    }, {
+                    user: {
+                          name: "Elmer Fudd",
+                          profileLink: "#",
+                          avatar: "http://i.imgur.com/jmOIVnd.png"
+                        },
+                    commentText: "Be vewy vewy quiet, I'm hunting wabbits!, He-e-e-e-e!!",
+                    commentTime: "20150307",
+                    editable: "false"
+                    }
+                  ]
+      }
+      ];
       Polymer({
         ready: function() {
           this.cards = cards;
