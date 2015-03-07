@@ -1,0 +1,52 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="app-globals" attributes="">
+  <template>
+    <link rel="stylesheet" href="app-globals.css">
+  </template>
+  <script>
+    (function () {
+      var cards = [{
+        context: {
+          name: "Looney Tunes",
+          image: "http://i.imgur.com/8uo3vrm.png"
+        },
+        author: {
+          name: "Bugs Bunny",
+          profileLink: "#",
+          avatar: "http://i.imgur.com/4FwR9iY.png"
+        },
+        tags: ["Cartoons", "Animation", "Short Film"],
+        tagColor: "blue",
+        content: {
+          media: "http://i.imgur.com/VYneGSr.jpg",
+          mediaLink: "https://plus.google.com/+DeboraSinulingga/posts/Jgcomz7o8rM",
+          excerpt: "Don't call me a doll"
+        },
+        comments: [{
+                    user: {
+                          name: "Bugs Bunny",
+                          profileLink: "#",
+                          avatar: "http://i.imgur.com/4FwR9iY.png"
+                        },
+                    commentText: "Duck Season",
+                    commentTime: "20150306"
+                    }, {
+                    user: {
+                          name: "Daffy Duck",
+                          profileLink: "#",
+                          avatar: "http://i.imgur.com/p2pmU28.png"
+                        },
+                    commentText: "Rabbit Season",
+                    commentTime: "20150307"
+                    }
+                  ]
+      }];
+      Polymer({
+        ready: function() {
+          this.cards = cards;
+        }
+      });
+    })();
+  </script>
+</polymer-element>
