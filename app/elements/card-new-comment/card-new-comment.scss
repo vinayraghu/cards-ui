@@ -2,6 +2,15 @@
   display: block;
 }
 
+.new-comment {
+  display: inline-block;
+
+  &.editing {
+    height: 64px;
+    margin-bottom: 1em;
+  }
+}
+
 .post-button {
   border: none;
   background: #53a93f;
@@ -9,7 +18,7 @@
   border: 1px solid;
   color: white;
   font-weight: bold;
-  padding: .4em 1em;
+  padding: .8em 1em;
 }
 
 .cancel-button {
@@ -18,5 +27,27 @@
   border-radius: 2px;
   border: 1px solid;
   font-weight: bold;
-  padding: .4em 1em;
+  padding: .8em 1em;
+}
+
+.comment-actions {
+  margin-top: 1em;
+}
+
+.new-comment-holder {
+  margin-top: 1em;
+}
+
+.comment-avatar {
+  width: 64px;
+  margin-right: 1em;
+  float: left;
+}
+
+.comment-input-holder {
+  width: calc(100% - (64px + 2em));
+  float: left;
+  > input {
+    width: 100%;
+  }
 }

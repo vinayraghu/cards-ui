@@ -3,10 +3,17 @@
 <polymer-element name="card-new-comment" attributes="model">
   <template>
     <link rel="stylesheet" href="card-new-comment.css">
-    <input type="text" id="newCommentText" on-click="{{ isEditing }}">
+    <div class="new-comment-holder">
+      <img src="http://i.imgur.com/nOgCs9Y.png" alt="" class="comment-avatar">
+      <div class="comment-input-holder">
+        <input type="text" id="newCommentText" on-click="{{ isEditing }}" class="new-comment">
+      </div>
+    </div>
     <template if="{{ editing == true }}">
-      <button id="commentButton" on-click="{{ postNewComment }}" class="post-button">Post Comment</button>
-      <button id="cancelComment" on-click="{{ isNotEditing }}" class="cancel-button">Cancel</button>
+      <div class="comment-actions">
+        <button id="commentButton" on-click="{{ postNewComment }}" class="post-button">Post Comment</button>
+        <button id="cancelComment" on-click="{{ isNotEditing }}" class="cancel-button">Cancel</button>
+      </div>
     </template>
 
   </template>
@@ -16,21 +23,26 @@
         editing: false,
         isEditing: function() {
           this.editing = true;
+          this.$.newCommentText.classList.add("editing");
         },
         isNotEditing: function() {
           this.$.newCommentText.value = "";
           this.editing = false;
+          this.$.newCommentText.classList.remove("editing");
         },
         postNewComment: function() {
-          var newCommentObject = {};
-          newCommentObject.user = {
-                                    name: "Wile E. Coyote",
-                                    profileLink: "#",
-                                    avatar: "http://i.imgur.com/nOgCs9Y.png"
-                                  };
-          newCommentObject.commentText = this.$.newCommentText.value;
-          newCommentObject.commentTime = Date.now();
-          this.model.push(newCommentObject);
+          if(this.$.newCommentText.value.trim() !== "") {
+            var newCommentObject = {};
+            newCommentObject.user = {
+                                      name: "Wile E. Coyote",
+                                      profileLink: "#",
+                                      avatar: "http://i.imgur.com/nOgCs9Y.png"
+                                    };
+            newCommentObject.commentText = this.$.newCommentText.value;
+            newCommentObject.commentTime = Date.now();
+            this.model.push(newCommentObject);
+            this.$.newCommentText.value="";
+          }
         }
       });
     })();
