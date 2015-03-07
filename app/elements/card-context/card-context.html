@@ -1,0 +1,18 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-context" attributes="name image">
+  <template>
+    <link rel="stylesheet" href="card-context.css">
+    <header>
+      <span class="context-name">{{ name }}</span>
+      <img src="{{ image }}" alt="" class="context-image">
+    </header>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 1em;
+  float: left;
+  width: 100%;
+}
+
+.context-image {
+  width: 32px;
+  height: 32px;
+  float: right;
+}
+
+.context-name {
+  float: left;
+  line-height: 2;
+}
