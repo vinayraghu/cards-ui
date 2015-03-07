@@ -1,8 +1,9 @@
 :host {
   display: block;
-  position: relative;
-  right: -35px;
+  position: absolute;
+  right: -4px;
   float: right;
+  z-index: 1;
 }
 
 .tag-list {
