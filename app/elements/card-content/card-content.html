@@ -1,0 +1,18 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="card-content" attributes="media mediaLink excerpt">
+  <template>
+    <link rel="stylesheet" href="card-content.css">
+    <p>{{excerpt}}</p>
+    <a href="{{ mediaLink }}">
+      <img class="img-media" src="{{media}}" alt="">
+    </a>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>
