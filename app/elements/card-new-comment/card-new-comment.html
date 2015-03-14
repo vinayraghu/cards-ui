@@ -33,6 +33,7 @@
         postNewComment: function() {
           if(this.$.newCommentText.value.trim() !== "") {
             var newCommentObject = {};
+            newCommentObject.id = this.model[this.model.length -1].id + 100;
             newCommentObject.user = {
                                       name: "Wile E. Coyote",
                                       profileLink: "#",
@@ -43,6 +44,7 @@
             newCommentObject.editable = true;
             this.model.push(newCommentObject);
             this.$.newCommentText.value="";
+            this.isNotEditing();
           }
         }
       });

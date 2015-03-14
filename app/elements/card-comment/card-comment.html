@@ -11,8 +11,8 @@
         <card-user name="{{ comment.user.name }}" profileLink="{{ comment.user.profileLink }}" avatar="{{ comment.user.avatar }}"></card-user>
         <card-comment-time time="{{comment.commentTime}}"></card-comment-time>
         <template if="{{ comment.editable == true }}">
-          <a href="#" on-click="{{ removeComment }}" class="pull-right">Delete</a>
-          <a href="#" on-click="{{ editComment }}" class="pull-right">Edit</a>
+          <a href="#" on-click="{{ removeComment }}" class="pull-right" uniqueID=" {{ comment.id }} ">Delete</a>
+          <!-- <a href="#" on-click="{{ editComment }}" class="pull-right" uniqueID=" {{ comment.id }} ">Edit</a> -->
         </template>
         <card-comment-text id="cardCommentText">{{ comment.commentText }}</card-comment-text>
       </div>
@@ -22,14 +22,17 @@
   <script>
     (function () {
       Polymer({
-        removeComment: function(e) {
-          e.preventDefault();
-          console.log("Remove comment");
-        },
-        editComment: function(e) {
-          e.preventDefault();
-          console.log("Edit comment");
+        removeComment: function(event, detail, sender) {
+          for(i = 0; i < this.comments.length; i++) {
+              if(this.comments[i].id === sender.templateInstance.model.comment.id) {
+                this.comments.splice(i,1);
+              }
+          }
         }
+        // editComment: function(e) {
+        //   e.preventDefault();
+        //   console.log("Edit comment");
+        // }
       });
     })();
   </script>
